@@ -1,0 +1,13 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'style.css' %}">
+<h1>Netflix App</h1>
+<table border="=1" width="40%">
+    <th>Title</th>
+
+        {% for content in sql_res %}
+        <tr>
+        <td>{{ content }} </td>
+
+        </tr>
+        {% endfor %}
+</table>
