@@ -2,12 +2,23 @@
 <link rel="stylesheet" href="{% static 'style.css' %}">
 <h1>Netflix App</h1>
 <table border="=1" width="40%">
-    <th>Title</th>
+    <th>Name</th>
+    <th>Type</th>
+    <th>Generation</th>
+    <th>Legendary</th>
+    <th>HP</th>
+    <th>Attack</th>
+    <th>Defense</th>
 
         {% for content in sql_res %}
-        <tr>
-        <td>{{ content }} </td>
-
-        </tr>
+            <tr>
+            <td>{{ content.Name }} </td>
+            <td>{{ content.Type }} </td>
+            <td>{{ content.Generation }} </td>
+            <td>{{ content.Legendary }} </td>
+            <td>{{ content.HP }} </td>
+            <td>{{ content.Attack }} </td>
+            <td>{{ content.Defense }} </td>
+            </tr>
         {% endfor %}
 </table>
