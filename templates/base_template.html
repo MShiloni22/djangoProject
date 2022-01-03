@@ -1,0 +1,18 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Pokemons </title>
+</head>
+<body>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <div class="topnav">
+        <a class="active" href="#home">Home</a>
+        <a href="#query_results">Query Results</a>
+        <a href="#add_pokemon">Add Pokemon</a>
+    </div>
+{% block content %}
+{% endblock %}
+</body>
+</html>

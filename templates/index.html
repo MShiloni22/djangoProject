@@ -1,24 +1,9 @@
-{% load static %}
-<link rel="stylesheet" href="{% static 'style.css' %}">
-<h1>Netflix App</h1>
-<table border="=1" width="40%">
-    <th>Name</th>
-    <th>Type</th>
-    <th>Generation</th>
-    <th>Legendary</th>
-    <th>HP</th>
-    <th>Attack</th>
-    <th>Defense</th>
-
-        {% for content in sql_res %}
-            <tr>
-            <td>{{ content.Name }} </td>
-            <td>{{ content.Type }} </td>
-            <td>{{ content.Generation }} </td>
-            <td>{{ content.Legendary }} </td>
-            <td>{{ content.HP }} </td>
-            <td>{{ content.Attack }} </td>
-            <td>{{ content.Defense }} </td>
-            </tr>
-        {% endfor %}
-</table>
+{% extends 'base_template.html' %}
+{% block content %}
+    <h1 align="center"> We Love Pokemons! </h1> <br>
+    <img src="static/Pokemon.jpg" alt="Pokemon" width="460" height="345">
+    <p style="font-size: xx-large" align="middle">Welcome to our website. <br>
+    This website gives you the opportunity to query pokemons and
+        add some of your own. <br>
+    Are you ready?</p>
+{% endblock %}
