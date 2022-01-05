@@ -15,6 +15,8 @@ def dictfetchall(cursor):
 def index(request):
     return render(request, 'index.html')
 
+def new_file(request):
+    return render(request, 'new_file.html')
 
 def query_results(request):
     with connection.cursor() as cursor:
