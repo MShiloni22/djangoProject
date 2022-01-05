@@ -1,0 +1,16 @@
+{% extends 'base_template.html' %}
+{% load static %}
+{% block page_content %}
+        <h1>Add Pokemon</h1>
+        <form method="POST">
+            {% csrf_token %}
+            Name: <input required type="text" minlength="2" maxlength="50" name="name"><br>
+            Type: <input required type="text" maxlength="50" name="type"><br>
+            Generation: <input required type="number" min="1" max="6" name="generation"><br>
+            Legendary: <input type="checkbox" name="legendary"><br>
+            HP: <input required type="number" min="1" max="300" name="hp"><br>
+            Attack: <input required type="number" min="1" max="300" name="attack"><br>
+            Defense: <input required type="number" min="1" max="300" name="defense"><br>
+            <input type="submit">
+        </form>
+{% endblock %}
