@@ -3,26 +3,28 @@
     <center>
     <h1>Pokemons App</h1>
     <p>Strongest legendary pokemons, by generation</p>
-    <table border="=1" width="40%">
-        <th>Generation</th>
-        <th>Pokemon name</th>
+        <table border="=1" width="40%">
+            <th>Generation</th>
+            <th>Pokemon name</th>
             {% for content in sql_res1 %}
                 <tr>
-                <td>{{ content.Generation }} </td>
-                <td>{{ content.Name }} </td>
+                    <td>{{ content.Generation }} </td>
+                    <td>{{ content.Name }} </td>
                 </tr>
             {% endfor %}
         </table><br><br>
 
-
-
-
-
-
-
-
-
-
+    <p>Dominant Pokemons by type</p>
+        <table border="=1" width="40%">
+            <th>Type</th>
+            <th>Pokemon name</th>
+            {% for content in sql_res2 %}
+                <tr>
+                    <td>{{ content.type }} </td>
+                    <td>{{ content.name }} </td>
+                </tr>
+            {% endfor %}
+        </table><br><br>
 
     <form method="POST">
         <p>Find pokemons' types with at least one pokemon
@@ -43,6 +45,20 @@
                 </tr>
             {% endfor %}
         </table><br><br>
+
+    <p>Type with highest average instability</p>
+        <table border="=1" width="40%">
+            <th>Type</th>
+            <th>Instability</th>
+            {% for content in sql_res4 %}
+                <tr>
+                    <td>{{ content.Type }} </td>
+                    <td>{{ content.Instability }} </td>
+                </tr>
+            {% endfor %}
+        </table><br><br>
+
+
 
 
 
