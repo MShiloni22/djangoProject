@@ -1,10 +1,38 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base_template.html' %}
+{% block page_content %}
+    <center>
+    <h1>Pokemons App</h1>
+    <p>Strongest legendary pokemons, by generation</p>
+    <table border="=1" width="40%">
+        <th>Generation</th>
+        <th>Pokemon name</th>
+            {% for content in sql_res1 %}
+                <tr>
+                <td>{{ content.Generation }} </td>
+                <td>{{ content.Name }} </td>
+                </tr>
+            {% endfor %}
+        </table><br><br>
 
-</body>
-</html>
+    <form method="POST">
+        <p>Find pokemons' types with at least one pokemon
+        with attack bigger than <b>Attack Threshold</b><br>
+                and this type's total number is more than
+            <b>Pokemon count</b>:</p>
+            {% csrf_token %}
+            Attack Threshold: <input type="number" min="0" name="X"><br>
+            Pokemon Count: <input type="number" min="0" name="Y"><br>
+            <input type="submit">
+        </form>
+
+        <table border="=1" width="40%">
+        <th>Type</th>
+            {% for content in sql_res3 %}
+                <tr>
+                <td>{{ content.Type }} </td>
+                </tr>
+            {% endfor %}
+        </table><br><br>
+
+    </center>
+{% endblock %}
