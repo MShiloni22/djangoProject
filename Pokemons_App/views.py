@@ -15,7 +15,20 @@ def dictfetchall(cursor):
 def index(request):
     return render(request, 'index.html')
 
-def new_file(request):
+def add_pokemon(request):
+    if request.method == 'POST' and request.POST:
+        f1 = request.POST["f1"]
+        f2 = request.POST["f2"]
+        f3 = request.POST["f3"]
+        if request.POST.get("f4") == 'on':
+            f4 = True
+        else:
+            f4 = False
+        f5 = request.POST["f5"]
+        f6 = request.POST["f6"]
+        f7 = request.POST["f7"]
+        new_record = Pokemons(f1,f2,f3,f4,f5,f6,f7)
+        new_record.save()
     return render(request, 'add_pokemon.html')
 
 def query_results(request):
